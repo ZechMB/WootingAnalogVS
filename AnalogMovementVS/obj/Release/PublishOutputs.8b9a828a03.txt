@@ -1,4 +1,0 @@
-C:\Users\zecha\Documents\Visual Studio 2022\Projects\AnalogMovementVS\AnalogMovementVS\bin\Release\Mods\mod\publish\modinfo.json
-C:\Users\zecha\Documents\Visual Studio 2022\Projects\AnalogMovementVS\AnalogMovementVS\bin\Release\Mods\mod\publish\AnalogMovementVS.dll
-C:\Users\zecha\Documents\Visual Studio 2022\Projects\AnalogMovementVS\AnalogMovementVS\bin\Release\Mods\mod\publish\AnalogMovementVS.deps.json
-C:\Users\zecha\Documents\Visual Studio 2022\Projects\AnalogMovementVS\AnalogMovementVS\bin\Release\Mods\mod\publish\AnalogMovementVS.pdb
