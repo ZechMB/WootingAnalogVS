@@ -1,0 +1,13 @@
+C:\Users\zecha\Documents\Visual Studio 2022\Projects\AnalogMovementVS\AnalogMovementVS\bin\Debug\Mods\mod\modinfo.json
+C:\Users\zecha\Documents\Visual Studio 2022\Projects\AnalogMovementVS\AnalogMovementVS\bin\Debug\Mods\mod\AnalogMovementVS.deps.json
+C:\Users\zecha\Documents\Visual Studio 2022\Projects\AnalogMovementVS\AnalogMovementVS\bin\Debug\Mods\mod\AnalogMovementVS.dll
+C:\Users\zecha\Documents\Visual Studio 2022\Projects\AnalogMovementVS\AnalogMovementVS\bin\Debug\Mods\mod\AnalogMovementVS.pdb
+C:\Users\zecha\Documents\Visual Studio 2022\Projects\AnalogMovementVS\AnalogMovementVS\obj\Debug\AnalogMovementVS.csproj.AssemblyReference.cache
+C:\Users\zecha\Documents\Visual Studio 2022\Projects\AnalogMovementVS\AnalogMovementVS\obj\Debug\AnalogMovementVS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zecha\Documents\Visual Studio 2022\Projects\AnalogMovementVS\AnalogMovementVS\obj\Debug\AnalogMovementVS.AssemblyInfoInputs.cache
+C:\Users\zecha\Documents\Visual Studio 2022\Projects\AnalogMovementVS\AnalogMovementVS\obj\Debug\AnalogMovementVS.AssemblyInfo.cs
+C:\Users\zecha\Documents\Visual Studio 2022\Projects\AnalogMovementVS\AnalogMovementVS\obj\Debug\AnalogMovementVS.csproj.CoreCompileInputs.cache
+C:\Users\zecha\Documents\Visual Studio 2022\Projects\AnalogMovementVS\AnalogMovementVS\obj\Debug\AnalogMovementVS.dll
+C:\Users\zecha\Documents\Visual Studio 2022\Projects\AnalogMovementVS\AnalogMovementVS\obj\Debug\refint\AnalogMovementVS.dll
+C:\Users\zecha\Documents\Visual Studio 2022\Projects\AnalogMovementVS\AnalogMovementVS\obj\Debug\AnalogMovementVS.pdb
+C:\Users\zecha\Documents\Visual Studio 2022\Projects\AnalogMovementVS\AnalogMovementVS\obj\Debug\ref\AnalogMovementVS.dll
