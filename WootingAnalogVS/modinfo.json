@@ -1,0 +1,16 @@
+{
+    "$schema": "https://moddbcdn.vintagestory.at/schema/modinfo.latest.json",
+    "type": "Code",
+    "modid": "wootinganalogvs",
+    "name": "WootingAnalogVS",
+    "authors": [
+        "Zec"
+    ],
+    "description": "Wooting keyboard support",
+    "version": "1.0.0",
+    "dependencies": {
+      "game": "1.21.6",
+      "analogmovementvs": "*"
+    },
+    "side": "Client"
+}
