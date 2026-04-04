@@ -4,13 +4,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.14.36930.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WootingAnalogVS", "WootingAnalogVS\WootingAnalogVS.csproj", "{CE7245B6-E3BD-4599-846A-80FF3E83651D}"
-	ProjectSection(ProjectDependencies) = postProject
-		{D852C5FC-BBA5-3869-C644-1605884A492A} = {D852C5FC-BBA5-3869-C644-1605884A492A}
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CakeBuild", "ZZCakeBuild\CakeBuild.csproj", "{23964D2F-C8A4-4AB8-8503-53C6A9B7D159}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnalogMovementVS", "..\AnalogMovementVS\AnalogMovementVS\AnalogMovementVS.csproj", "{D852C5FC-BBA5-3869-C644-1605884A492A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,10 +21,6 @@ Global
 		{23964D2F-C8A4-4AB8-8503-53C6A9B7D159}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23964D2F-C8A4-4AB8-8503-53C6A9B7D159}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23964D2F-C8A4-4AB8-8503-53C6A9B7D159}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D852C5FC-BBA5-3869-C644-1605884A492A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D852C5FC-BBA5-3869-C644-1605884A492A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D852C5FC-BBA5-3869-C644-1605884A492A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D852C5FC-BBA5-3869-C644-1605884A492A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

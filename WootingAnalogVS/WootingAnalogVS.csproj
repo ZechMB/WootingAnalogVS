@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Reference Include="AnalogMovementVS">
+      <HintPath>..\..\AnalogMovementVS\Releases\analogmovementvs\AnalogMovementVS.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="VintagestoryAPI">
       <HintPath>$(VINTAGE_STORY)/VintagestoryAPI.dll</HintPath>
       <Private>false</Private>
@@ -65,13 +69,6 @@
 <ItemGroup>
   <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   <PackageReference Include="WootingAnalogSDK.NET" Version="0.5.0" />
-</ItemGroup>
-
-<ItemGroup>
-  <ProjectReference Include="..\..\AnalogMovementVS\AnalogMovementVS\AnalogMovementVS.csproj">
-    <Private>False</Private>
-    <CopyLocalSatelliteAssemblies>False</CopyLocalSatelliteAssemblies>
-  </ProjectReference>
 </ItemGroup>
 
 <ItemGroup>

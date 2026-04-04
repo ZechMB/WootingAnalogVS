@@ -12,13 +12,13 @@ namespace WootingAnalogVS
 {
     public class WootingAnalogVSModSystem : ModSystem
     {
+        private static bool resolverSet = false;
         private bool wootActivated = false;
         private ICoreClientAPI? capi;
         private AnalogMovement? am;
         private long tickListenerId = 0;
         private bool initialized = false;
-        private static Config? config;
-        private static bool resolverSet = false;
+        private static Config? config;        
 
         
         public override void StartClientSide(ICoreClientAPI api)
@@ -26,25 +26,27 @@ namespace WootingAnalogVS
             capi = api;
             tickListenerId = api.Event.RegisterGameTickListener(OnTick, 0);
 
-            // On Linux, the P/Invoke name "native/wooting_analog_wrapper" won't resolve automatically.
-            // Intercept it and load the .so from the mod's own unpacked directory using its absolute path.
-            // The resolverSet guard is needed because SetDllImportResolver can only be called once per assembly per process.
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux) && !resolverSet)
+            //set native lib location to /native because vintage story wants them there
+            if (!resolverSet)
             {
-                resolverSet = true;
-                var modDir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? "";
-                var soPath = Path.Combine(modDir, "native", "wooting_analog_wrapper.so");
-                NativeLibrary.SetDllImportResolver(typeof(WootingAnalogSDK).Assembly, (libraryName, asm, searchPath) =>
+                resolverSet = true;                
+                NativeLibrary.SetDllImportResolver(typeof(WootingAnalogSDK).Assembly, (libraryName, assembly, searchPath) =>
                 {
-                    if (libraryName == "native/wooting_analog_wrapper")
+                    if (libraryName == "wooting_analog_wrapper")
                     {
-                        try { return NativeLibrary.Load(soPath); }
-                        catch (Exception ex) { Mod.Logger.Error($"[WootingLinuxFix] Failed to load wrapper: {ex.Message}"); }
+                        string path = "";
+                        var modDir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? "";
+                        if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows)) path = Path.Combine(modDir, "native", "wooting_analog_wrapper.dll");
+                        else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux)) path = Path.Combine(modDir, "native", "wooting_analog_wrapper.so");
+                        else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX)) path = Path.Combine(modDir, "native", "wooting_analog_wrapper.dylib");
+
+                        try { return NativeLibrary.Load(path); }
+                        catch (Exception ex) { Mod.Logger.Error($" Failed to load wooting wrapper: {ex.Message}"); }
                     }
                     return IntPtr.Zero;
-                });
+                });                
             }
-
+                      
             // Initialise the SDK
             try
             {
