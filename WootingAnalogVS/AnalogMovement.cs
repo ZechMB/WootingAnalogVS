@@ -29,7 +29,7 @@ namespace WootingAnalogVS
 
         internal void ConsumeInputs()
         {
-            if (capi.World.Player.Entity.Controls is EntityControlsAMfVS am && am.IsGameReadyForInput)
+            if (capi.World.Player.Entity.Controls is EntityControlsAMfVS am)
             {
                 //get key values
                 if (ForwardKey != 0)
@@ -55,22 +55,13 @@ namespace WootingAnalogVS
                 {
                     am.amForwardBackward = forward + -backward;
                     am.amLeftRight = left + -right;
-                    am.amSprint = capi.Input.IsHotKeyPressed("sprint") || (am.Sprint && am.TriesToMove && ClientSettings.ToggleSprint);
+                    am.amSprint = capi.Input.IsHotKeyPressed("sprint") || (am.Sprint && am.TriesToMove && ClientSettings.ToggleSprint && am.IsMouseGrabbed);
                 }
 
                 //set jump & sneak
                 var player = capi.World.Player;
-                am.amJump = capi.Input.IsHotKeyPressed("jump") && (player.Entity.PrevFrameCanStandUp || player.WorldData.NoClip);
-                am.amSneak = capi.Input.IsHotKeyPressed("sneak");
-            }
-            else if (capi.World.Player.Entity.Controls is EntityControlsAMfVS am2 && !am2.IsGameReadyForInput)
-            {
-                //zero the controls if we enter a menu so we stop moving
-                am2.amForwardBackward = 0;
-                am2.amLeftRight = 0;
-                am2.amSprint = false;
-                am2.amJump = false;
-                am2.amSneak = false;
+                am.amJump = capi.Input.IsHotKeyPressed("jump") && (player.Entity.PrevFrameCanStandUp || player.WorldData.NoClip) && am.IsMouseGrabbed;
+                am.amSneak = capi.Input.IsHotKeyPressed("sneak") && am.IsMouseGrabbed;
             }
         }
 
