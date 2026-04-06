@@ -12,7 +12,6 @@ namespace WootingAnalogVS
 {
     public class WootingAnalogVSModSystem : ModSystem
     {
-        private static bool resolverSet = false;
         private bool wootActivated = false;
         private ICoreClientAPI? capi;
         private AnalogMovement? am;
@@ -26,10 +25,9 @@ namespace WootingAnalogVS
             capi = api;
             tickListenerId = api.Event.RegisterGameTickListener(OnTick, 0);
 
-            //set native lib location to /native because vintage story wants them there
-            if (!resolverSet)
+            //set native lib location to /native because vintage story wants them there            
+            try
             {
-                resolverSet = true;                
                 NativeLibrary.SetDllImportResolver(typeof(WootingAnalogSDK).Assembly, (libraryName, assembly, searchPath) =>
                 {
                     if (libraryName == "wooting_analog_wrapper")
@@ -44,8 +42,10 @@ namespace WootingAnalogVS
                         catch (Exception ex) { Mod.Logger.Error($" Failed to load wooting wrapper: {ex.Message}"); }
                     }
                     return IntPtr.Zero;
-                });                
+                });
             }
+            catch { }//expected to fail if mod is reloaded (such as by going to the main menu and back into a world)
+            
                       
             // Initialise the SDK
             try
