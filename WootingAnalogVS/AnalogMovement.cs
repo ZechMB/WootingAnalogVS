@@ -50,7 +50,7 @@ namespace WootingAnalogVS
                 }
 
                 //set movement
-                if (config.autosprint) AutoSprint(am);
+                if (config.autosprint && !am.IsMounted) AutoSprint(am);
                 else
                 {
                     am.amForwardBackward = forward + -backward;
